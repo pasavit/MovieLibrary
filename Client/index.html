@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie DB</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #BCD3F2;
+        }
+        #searchform {
+            color: whitesmoke;
+        }
+        #navbarDropdown {
+            color: burlywood;
+        }
+        #searchButton {
+            color: burlywood;
+            border-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #395C6B;">
+            <a class="navbar-brand" href="#">Movie DB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onClick="getMovieList()">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Movie</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class='form-group m-2'>
+                                <form id="my-form">
+                                    <input class="dropdown-item" type="text" name="title" placeholder="Title" />
+                                    <div class="dropdown-divider"></div>
+                                    <input class="dropdown-item" type="text" name="director" placeholder="Director" />
+                                    <div class="dropdown-divider"></div>
+                                    <input class="dropdown-item" type="text" name="genre" placeholder="Genre" />
+                                    <div class="dropdown-divider"></div>
+                                    <input class="dropdown-item" type="text" name="movieImage" placeholder="Image URL" />
+                                    <div class="dropdown-divider"></div>
+                                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" id="searchform">
+                    <input type="radio" id="title" name="searchtype" value="title" class="mr-1">
+                    <label for="title" class="mr-2 ml-1">Title</label>
+                    <input type="radio" id="director" name="searchtype" value="director" class="mr-1">
+                    <label for="director" class="mr-2 ml-1">Director</label>
+                    <input type="radio" id="genre" name="searchtype" value="genre" class="mr-1">
+                    <label for="genre" class="mr-2 ml-1">Genre</label>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchbox">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="searchButton">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row" id="movieCards"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
